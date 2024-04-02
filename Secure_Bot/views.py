@@ -22,7 +22,7 @@ def post_alert(request):
         img_name = 'alert_image' + str(len(Alert.objects.all())) + '.jpg'
         test_stuff = str(request.body)[:-45]
         print(bytes(test_stuff, 'utf-8'))
-        Alert.objects.create(photo=ImageFile(io.BytesIO(), name=img_name))
+        Alert.objects.create(photo=ImageFile(io.BytesIO(request.body), name=img_name))
         detect_from_image(img_name)
         return HttpResponse('Image received OK!')
     else:
