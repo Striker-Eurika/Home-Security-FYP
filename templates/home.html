@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Security Dashboard</title>
+</head>
+<body>
+<div>
+    {% for detection in detections %}
+        <img src="{{ detection }}" alt="alert image corresponding to specific alert">
+    {% endfor %}
+</div>
+<br>
+</body>
+</html>
